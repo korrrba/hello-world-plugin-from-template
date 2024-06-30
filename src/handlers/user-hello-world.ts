@@ -1,7 +1,7 @@
 import { Context } from "../types";
 import { addCommentToIssue } from "../utils/issue";
 
-export async function userStartStop(context: Context): Promise<{ output: string | null }> {
+export async function userHelloWorld(context: Context): Promise<{ output: string | null }> {
   const { payload, logger, config } = context;
   const { issue, comment, sender, repository } = payload as Context<"issue_comment.created">["payload"];
   const directive = comment.body.split(" ")[0].replace("/", "");
