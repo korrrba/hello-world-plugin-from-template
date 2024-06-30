@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { createAdapters } from "./adapters";
 import { Env, PluginInputs } from "./types";
 import { Context } from "./types";
+import { userHelloWorld } from "./handlers/user-hello-world";
 
 /**
  * How a worker executes the plugin.
@@ -40,7 +41,7 @@ export async function plugin(inputs: PluginInputs, env: Env) {
   context.adapters = createAdapters(supabase, context);
 
   if (context.eventName === "issue_comment.created") {
-    // do something
+    data = await userHelloWorld(context);
   } else {
     context.logger.error(`Unsupported event: ${context.eventName}`);
   }
