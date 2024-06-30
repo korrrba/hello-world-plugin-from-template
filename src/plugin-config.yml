@@ -1,0 +1,17 @@
+plugins:
+  issue_comment.created:
+    - uses:
+        - plugin: korrrba/hello-world-plugin-from-template:compute.yml@development
+          name: hello-world
+          id: hello-world-command
+          type: github
+          description: "Allows a user to hello world a bounty without negative XP impact"
+          command: "/(hello)"
+          example: "/hello"
+          with:
+            disabledCommands: []
+            timers: []
+            maxConcurrentTasks: 1
+            labels:
+              time: []
+              priority: []
