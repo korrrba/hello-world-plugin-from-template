@@ -7,7 +7,7 @@ plugins:
       skipBotEvents: true
       uses:
       # hello-world-plugin
-      - plugin: http://127.0.0.1:9090
+      - plugin: korrrba/hello-world-plugin-from-template:compute.yml@development
         type: github
         with:
           response: world
