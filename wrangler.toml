@@ -4,4 +4,6 @@ compatibility_date = "2024-05-23"
 node_compat = true
 
 [env.dev]
+kv_namespaces = [ { binding = "PLUGIN_CHAIN_STATE", id = "cc553e460e164dcd8d610b0ccdd7c1f4" } ]
+
 [env.prod]
