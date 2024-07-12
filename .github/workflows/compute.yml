@@ -39,4 +39,7 @@ jobs:
       - name: execute directive
         run: npx tsx ./src/main.ts
         id: hello-world-command
+        env:
+          SUPABASE_URL: ${SUPABASE_URL}
+          SUPABASE_KEY: ${SUPABASE_KEY}
 
