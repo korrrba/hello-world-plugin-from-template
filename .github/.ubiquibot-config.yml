@@ -1,13 +1,13 @@
 plugins:
-  'issue_comment.created':
+  "issue_comment.created":
     - name: "hello-world-plugin name"
       description: "hello-world-plugin description"
       command: "/hello"
       example: "/hello example"
       skipBotEvents: true
       uses:
-      # hello-world-plugin
-      - plugin: korrrba/hello-world-plugin-from-template:compute.yml@development
-        type: github
-        with:
-          response: world
+        # hello-world-plugin
+        - plugin: korrrba/hello-world-plugin-from-template:compute.yml@development
+          type: github
+          with:
+            response: world
