@@ -7,7 +7,7 @@ export async function userHelloWorld(context: Context): Promise<{ output: string
   const directive = comment.body.split(" ")[0].replace("/", "");
 
   if (directive === "hello") {
-    await addCommentToIssue(context, "```Hello world plugin from template!\n```");
+    await addCommentToIssue(context, "Hello world plugin from template!\n");
   }
   return { output: null };
 }
