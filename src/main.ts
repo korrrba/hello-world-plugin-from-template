@@ -10,6 +10,8 @@ import { plugin } from "./plugin";
  */
 export async function run() {
   const payload = github.context.payload.inputs;
+  console.error(payload.env);
+  const env = Object({});
   const settings = Value.Decode(pluginSettingsSchema, Value.Default(pluginSettingsSchema, JSON.parse(payload.settings)));
 
   if (!pluginSettingsValidator.test(settings)) {
@@ -25,7 +27,7 @@ export async function run() {
     ref: payload.ref,
   };
 
-  await plugin(inputs, {});
+  await plugin(inputs, env);
 
   return returnDataToKernel(inputs.authToken, inputs.stateId, {});
 }
